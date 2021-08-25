@@ -377,15 +377,16 @@ final class EPUBMetadataParser: Loggable {
     }
 
     private lazy var readingProgression: ReadingProgression = {
-        let direction = document.firstChild(xpath: "/opf:package/opf:readingOrder|/opf:package/opf:spine")?.attr("page-progression-direction") ?? "default"
-        switch direction {
-        case "ltr":
-            return .ltr
-        case "rtl":
-            return .rtl
-        default:
-            return .auto
-        }
+        // let direction = document.firstChild(xpath: "/opf:package/opf:readingOrder|/opf:package/opf:spine")?.attr("page-progression-direction") ?? "default"
+        // switch direction {
+        // case "ltr":
+        //     return .ltr
+        // case "rtl":
+        //     return .rtl
+        // default:
+        //     return .auto
+        // }
+        return .ltr
     }()
     
     /// https://github.com/readium/architecture/blob/master/streamer/parser/metadata.md#collections-and-series
