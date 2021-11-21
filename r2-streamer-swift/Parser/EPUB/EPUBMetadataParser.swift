@@ -82,7 +82,10 @@ final class EPUBMetadataParser: Loggable {
     ///   1. its xml:lang attribute
     ///   2. the package's xml:lang attribute
     ///   3. the primary language for the publication
-    private func language(for element: Fuzi.XMLElement) -> String? {
+    private func language(for element: 
+                          
+                          
+                          .XMLElement) -> String? {
         return element.attr("lang") ?? packageLanguage ?? languages.first
     }
     
@@ -482,7 +485,7 @@ final class EPUBMetadataParser: Loggable {
     /// Returns the given `dc:` tag in the `metadata` element.
     ///
     /// This looks under `metadata/dc-metadata` as well, to be compatible with old EPUB 2 files.
-    private func dcElement(tag: String) -> XMLElement? {
+    private func dcElement(tag: String) -> Fuzi.XMLElement? {
         return metadataElement?
             .firstChild(xpath:"(.|opf:dc-metadata)/dc:\(tag)")
     }
