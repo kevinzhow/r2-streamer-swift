@@ -82,10 +82,7 @@ final class EPUBMetadataParser: Loggable {
     ///   1. its xml:lang attribute
     ///   2. the package's xml:lang attribute
     ///   3. the primary language for the publication
-    private func language(for element: 
-                          
-                          
-                          .XMLElement) -> String? {
+    private func language(for element: Fuzi.XMLElement) -> String? {
         return element.attr("lang") ?? packageLanguage ?? languages.first
     }
     
